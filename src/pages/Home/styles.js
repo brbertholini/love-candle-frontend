@@ -6,11 +6,11 @@ export const Container = styled.header`
 
 export const Content = styled.div`
     width: 100vw;
-    padding: 0 21vw;
+    padding: 0 22vw;
 `
 
+
 export const FirstSection = styled.div`
-    height: 100%;
     margin-top: 20px;
     margin-bottom: 80px;
     display: flex;
@@ -20,14 +20,19 @@ export const FirstSection = styled.div`
 `
 
 export const TextArea = styled.div`
+    width: 50%;
     background-color: #FFF4EE;
-    padding: 14% 60px;
+    padding: 15% 60px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    -webkit-box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
-    box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -8px 8px 15px 0px rgba(0,0,0,0.30);
+    -moz-box-shadow: -8px 8px 15px 0px rgba(0,0,0,0.30);
+    box-shadow: -8px 8px 15px 0px rgba(0,0,0,0.30);
+
+    > p {
+        height: fit-content;
+    }
 `
 
 export const Text = styled.p`
@@ -43,14 +48,14 @@ export const Button = styled.button`
     background-color: #0F0F0F;
     color: #FFF4EE;
     border: none;
-    -webkit-box-shadow: -10px 3px 30px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: -10px 3px 30px 0px rgba(0,0,0,0.75);
-    box-shadow: -10px 3px 30px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 `
 
 export const ImageSection1 = styled.img`
     width: 53%;
-    -webkit-box-shadow: 0px 10px 25px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 10px 25px -8px rgba(0,0,0,0.75);
-    box-shadow: 0px 10px 25px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.30);
+    -moz-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.30);
+    box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.30);
 `

@@ -3,6 +3,10 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 
+html, body {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -41,4 +45,23 @@ a:hover {
     transition : 700ms;
     transform: translateX(3px);
     }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #121212 #fff4ee;
+  }
+  
+*::-webkit-scrollbar {
+    width: 16px;
+  }
+*::-we
+bkit-scrollbar-track {
+    background: #fff4ee;
+  }
+
+*::-webkit-scrollbar-thumb {
+    background-color: #121212;
+    border-radius: 50px;
+    border: 3px solid #000000;
+  }
 `

@@ -1,5 +1,6 @@
 import { Container, Content, FirstSection, TextArea, Text, Button, ImageSection1 } from "./styles"
 import { Header } from "../../components/Header"
+import { Footer } from "../../components/Footer"
 import RightImageSection1 from '../../assets/images/RightImageSection1.svg';
 
 export function Home() {
@@ -16,6 +17,7 @@ export function Home() {
                 </FirstSection>
 
             </Content>
+            <Footer />
         </Container>
     )
 }
