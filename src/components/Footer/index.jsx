@@ -15,15 +15,17 @@ export function Footer() {
                     <Navigation>
                         <Title>NAVEGAR</Title>
                         <ul>
-                            <li>INÍCIO</li>
-                            <li>CATÁLOGO</li>
-                            <li>CONTATO</li>
+                            <li>Início</li>
+                            <li>Catálogo</li>
+                            <li>Contato</li>
                         </ul>
                     </Navigation>
                     <Social>
                         <Title>REDES SOCIAIS</Title>
-                        <p>INSTAGRAM</p>
-                        <p>WHATSAPP</p>
+                        <ul>
+                            <li>Instagram</li>
+                            <li>Whatsapp</li>
+                        </ul>
                     </Social>
                 </Menu>
             </Content>

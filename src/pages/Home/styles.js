@@ -11,7 +11,6 @@ export const Content = styled.div`
 
 
 export const FirstSection = styled.div`
-    margin-top: 20px;
     margin-bottom: 80px;
     display: flex;
     flex-direction: row;
