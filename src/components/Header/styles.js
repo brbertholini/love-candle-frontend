@@ -5,6 +5,7 @@ import { FiShoppingCart } from "react-icons/fi";
 export const Container = styled.header`
     width: 100vw;
     margin-top: 45px;
+    margin-bottom: 30px;
 `
 
 export const Content = styled.div`
