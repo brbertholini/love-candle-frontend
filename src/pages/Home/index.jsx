@@ -2,6 +2,7 @@ import { Container, Content, FirstSection, TextArea, Text, Button, ImageSection1
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import RightImageSection1 from '../../assets/images/RightImageSection1.svg';
+import { Newsletter } from "../../components/Newsletter";
 
 export function Home() {
     return(
@@ -15,7 +16,7 @@ export function Home() {
                     </TextArea>
                     <ImageSection1 src={RightImageSection1} alt="Imagem de um difusor com rosas" />
                 </FirstSection>
-
+                <Newsletter />
             </Content>
             <Footer />
         </Container>
