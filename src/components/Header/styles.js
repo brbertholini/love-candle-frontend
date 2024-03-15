@@ -18,7 +18,7 @@ export const Content = styled.div`
 
 export const Menu = styled.div`
     display: flex;
-    margin: 30px 0;
+    margin: 30px 0 0 0;
 `
 
 export const Navigation = styled.nav`
