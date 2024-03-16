@@ -7,17 +7,17 @@ export const Container = styled.header`
 
 export const Content = styled.div`
     width: 100%;
-    padding: 0 22vw;
+    padding: 0 15vw;
     justify-content: space-around;
     display: flex;
     flex-direction: row;
-    gap: 80px;
+    gap: 50px;
 `
 
 export const Menu = styled.div`
     display: flex;
     text-align: start;
-    gap: 40px;
+    gap: 5vw;
     margin: 30px 0;
 `
 
