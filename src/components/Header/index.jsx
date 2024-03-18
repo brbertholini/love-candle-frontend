@@ -1,15 +1,17 @@
-import { Container, Content, Menu, Navigation, MGlassIcon, Cart, IconArea } from "./styles";
+import { Container, Content, Menu, Navigation, MGlassIcon, Cart, IconArea, Link } from "./styles";
 import LOVECANDLE from '../../assets/images/LOVECANDLE.svg';
 
 export function Header() {
     return (
         <Container>
             <Content>
-                <img src={LOVECANDLE} alt="Logo do site" />
+                <Link href="/"><img src={LOVECANDLE} alt="Logo do site" /></Link>
                 <Menu>
                     <Navigation>
                         <ul>
-                            <li>INÍCIO</li><li>CATÁLOGO</li><li>CONTATO</li>
+                            <li><Link href="/">INÍCIO</Link></li>
+                            <li><Link  href="/Catalogo">CATÁLOGO</Link></li>
+                            <li>CONTATO</li>
                         </ul>
                     </Navigation>
                     <IconArea><MGlassIcon /></IconArea>
