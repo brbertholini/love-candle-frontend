@@ -21,17 +21,14 @@ export const FirstSection = styled.div`
 export const TextArea = styled.div`
     width: 50%;
     background-color: #FFF4EE;
-    padding: 15% 60px;
+    height: auto;
+    padding: 5vw 3vw;
     display: flex;
     flex-direction: column;
     gap: 24px;
     -webkit-box-shadow: -8px 8px 15px 0px rgba(0,0,0,0.30);
     -moz-box-shadow: -8px 8px 15px 0px rgba(0,0,0,0.30);
     box-shadow: -8px 8px 15px 0px rgba(0,0,0,0.30);
-
-    > p {
-        height: fit-content;
-    }
 `
 
 export const Text = styled.p`
@@ -53,7 +50,7 @@ export const Button = styled.button`
 `
 
 export const ImageSection1 = styled.img`
-    width: 53%;
+    width: 50%;
     -webkit-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.30);
     -moz-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.30);
     box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.30);
