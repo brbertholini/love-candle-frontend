@@ -14,6 +14,9 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+>a:hover{
+    transform: translateX(0);
+}
 `
 
 export const Menu = styled.div`
@@ -31,6 +34,7 @@ export const Navigation = styled.nav`
     gap: 40px;
     color: #000000;
 }
+
 
 ul li {
     cursor: pointer;
@@ -78,4 +82,7 @@ export const Cart = styled(FiShoppingCart)`
     margin-left: 40px;
     font-size: 19px;
     color: #000000;
+`
+export const Link = styled.a`
+    color:black;
 `
