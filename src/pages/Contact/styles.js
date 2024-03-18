@@ -33,21 +33,26 @@ export const RightContent = styled.div`
 `
 
 export const Section = styled.div`
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     align-items: center;
     display: flex;
     flex-direction: row;
+
     > p {
         width: 100%;
     }
 `
-
+export const Line = styled.div`
+    border-top: 1px solid #A9A9A9;
+    height: 30px;
+    width: 100%;
+`
 export const SectionInstagram = styled.div`
     flex-direction: column;
     align-items: center;
     > p {
         width: 60%;
+        margin-bottom: 10px;
     }
 `
 
@@ -70,6 +75,7 @@ export const InstaIcon = styled(FaInstagram)`
     margin-top: 3px;
     margin-right: 25px;
     margin-left: 25px;
+
 `
 
 export const Text = styled.div`
@@ -101,6 +107,7 @@ export const Email = styled.div`
     width: 45%;
     display: flex;
     flex-direction: column;
+
     gap: 20px;
 `
 

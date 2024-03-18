@@ -1,12 +1,12 @@
-import { Container, Content, Text, Form, NameEmail, Name, Email, Input, LeftContent, RightContent, LocalIcon, Section, SectionInstagram, PhoneIcon, InstaIcon } from "./styles"
+import { Container, Content, Text, Form, NameEmail, Name, Email, Input, LeftContent, RightContent, LocalIcon, Line , Section, SectionInstagram, PhoneIcon, InstaIcon } from "./styles"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
-
 export function Contact() {
     return (
         <Container>
             <Header />
             <Content>
+                
                 <LeftContent>
                     <Text>
                         <h1>ENTRE EM CONTATO</h1>
@@ -37,19 +37,22 @@ export function Contact() {
                     <Section>
                     <p>Estamos disponíveis para responder suas perguntas o mais rápido possível. Aqui estão todas as informações de contato para quando você precisar!</p>
                     </Section>
+                    <Line/>
                     <h1>ENDEREÇO</h1>
                     <Section>
                     <LocalIcon /><p>Tv. Jesus Álvares Cruz, casa 6- Vila Alpina, São Paulo - SP, 03204-035</p>
                     </Section>
+                    <Line/>
                     <h1>TELEFONE</h1>
                     <Section>
                     <PhoneIcon /><p>(11) 9 9024-6137<br/>(11) 9 94424-9012</p>
                     </Section>
+                    <Line/>
                     <h1>INSTAGRAM</h1>
                     <SectionInstagram>
                     <p>Siga a Love Candle no Instagram e acompanhe as novidades e promoções!</p>
                     <Section>
-                    <InstaIcon /><p>@lovecandle.mahria</p>
+                    <InstaIcon/><p>@lovecandle.mahria</p>
                     </Section>
                     </SectionInstagram>
 
