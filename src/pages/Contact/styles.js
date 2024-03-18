@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Container = styled.header`
+export const Container = styled.div`
     width: 100vw;
 `
 
@@ -18,6 +18,7 @@ export const Text = styled.div`
     > h1 {
         font-family: 'DM Serif Display', serif;
         font-size: 32px;
+        margin-bottom: 8px;
     }
 `
 
