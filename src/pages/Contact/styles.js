@@ -1,19 +1,80 @@
 import styled from "styled-components"
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export const Container = styled.div`
     width: 100vw;
 `
 
 export const Content = styled.div`
-    width: 65vw;
+    width: 100vw;
     padding: 0 15vw;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+export const LeftContent = styled.div`
+    width: 50%;
+`
+
+export const RightContent = styled.div`
+    padding-left: 120px;
+    width: 50%;
+    display: flex;
     flex-direction: column;
-    gap: 40px;
+
+    > h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+`
+
+export const Section = styled.div`
+    margin-top: 10px;
+    margin-bottom: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    > p {
+        width: 100%;
+    }
+`
+
+export const SectionInstagram = styled.div`
+    flex-direction: column;
+    align-items: center;
+    > p {
+        width: 60%;
+    }
+`
+
+export const LocalIcon = styled(FaMapMarkerAlt)`
+    font-size: 20px;
+    margin-top: 1px;
+    margin-right: 25px;
+    margin-left: 25px;
+`
+
+export const PhoneIcon = styled(FaPhoneAlt)`
+    font-size: 20px;
+    margin-top: 5px;
+    margin-right: 25px;
+    margin-left: 25px;
+`
+
+export const InstaIcon = styled(FaInstagram)`
+    font-size: 20px;
+    margin-top: 3px;
+    margin-right: 25px;
+    margin-left: 25px;
 `
 
 export const Text = styled.div`
     width: 100%;
+    margin-bottom: 40px;
 
     > h1 {
         font-family: 'DM Serif Display', serif;
