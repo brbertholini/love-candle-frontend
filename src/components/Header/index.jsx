@@ -11,11 +11,11 @@ export function Header() {
                         <ul>
                             <li><Link href="/">INÍCIO</Link></li>
                             <li><Link  href="/Catalogo">CATÁLOGO</Link></li>
-                            <li>CONTATO</li>
+                            <li><Link  href="/Contato">CONTATO</Link></li>
                         </ul>
                     </Navigation>
                     <IconArea><MGlassIcon /></IconArea>
-                    <IconArea><Cart /></IconArea>
+                    <IconArea><Link  href="/Cart"><Cart /></Link></IconArea>
                 </Menu>
             </Content>
         </Container>
