@@ -3,11 +3,13 @@ import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import RightImageSection1 from '../../assets/images/RightImageSection1.svg';
 import { Newsletter } from "../../components/Newsletter";
+import { DivisorLine } from "../../components/DivisorLine";
 
 export function Home() {
     return(
         <Container>
             <Header />
+            <DivisorLine />
             <Content>
                 <FirstSection>
                     <TextArea>

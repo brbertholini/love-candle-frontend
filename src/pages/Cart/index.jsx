@@ -2,11 +2,13 @@ import { Container, Content, CartInfo } from "./styles"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { Text } from "../Contact/styles"
+import { DivisorLine } from "../../components/DivisorLine"
 
 export function Cart() {
     return(
         <Container>
             <Header />
+            <DivisorLine />
             <Content>
                 <CartInfo>
                 <Text>

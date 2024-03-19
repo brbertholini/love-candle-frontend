@@ -1,11 +1,13 @@
 import { Container, Content, Text, Form, NameEmail, Name, Email, Input, LeftContent, RightContent, LocalIcon, Section, SectionInstagram, PhoneIcon, InstaIcon } from "./styles"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
+import { DivisorLine } from "../../components/DivisorLine"
 
 export function Contact() {
     return (
         <Container>
             <Header />
+            <DivisorLine />
             <Content>
                 <LeftContent>
                     <Text>
