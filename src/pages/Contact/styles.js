@@ -11,6 +11,7 @@ export const Content = styled.div`
     width: 100vw;
     padding: 0 15vw;
     display: flex;
+    margin-top: 60px;
     flex-direction: row;
     justify-content: space-between;
 `

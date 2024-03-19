@@ -21,7 +21,6 @@ export const FirstSection = styled.div`
 export const TextArea = styled.div`
     width: 50%;
     background-color: #FFF4EE;
-    height: auto;
     padding: 5vw 3vw;
     display: flex;
     flex-direction: column;
