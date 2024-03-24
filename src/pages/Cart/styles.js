@@ -12,6 +12,22 @@ export const Content = styled.div`
     gap: 25px;
 `
 
-export const CartInfo = styled.div`
+export const CartHeader = styled.div`
 
+`
+
+export const CartInfo = styled.div`
+    width: 100%;
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: regular;
+    justify-content: space-between;
+
+    > div {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
 `
