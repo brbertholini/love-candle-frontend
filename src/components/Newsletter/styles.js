@@ -28,7 +28,6 @@ export const Title = styled.h1`
 
 export const FormNewsletter = styled.form`
     display: flex;
-    justify-content: row;
     margin-top: 8px;
 `
 

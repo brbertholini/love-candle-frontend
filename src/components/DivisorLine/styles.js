@@ -5,7 +5,6 @@ export const Container = styled.div`
     height: 1px;
     text-align: center;
     background-color: #A9A9A9;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 `

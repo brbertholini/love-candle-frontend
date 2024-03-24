@@ -47,7 +47,7 @@ export const SectionInstagram = styled.div`
     flex-direction: column;
     align-items: center;
     > p {
-        width: 60%;
+        width: 100%;
     }
 `
 
