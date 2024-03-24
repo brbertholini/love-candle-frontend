@@ -26,7 +26,7 @@ export const Menu = styled.div`
 
 export const Navigation = styled.nav`
 > ul {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: regular;
     padding: 0;
     display: flex;
