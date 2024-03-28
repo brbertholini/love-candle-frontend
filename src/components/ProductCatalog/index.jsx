@@ -11,7 +11,7 @@ export function ProductCatalog(props) {
     const stars = props.stars;
     let starsimage = [];
     let avaliacoes = props.avaliacoes;
-    let productTittle = props.tittle;
+    let productTitle = props.title;
     let price = props.price;
     for(let i =0; i<5; i++){
         if(i < stars){
@@ -28,7 +28,7 @@ export function ProductCatalog(props) {
                 {starsimage}
                 <p>({avaliacoes})</p>
             </Avaliacao>
-            <h1>{productTittle}</h1>
+            <h1>{productTitle}</h1>
             <h2>R${price}</h2>
         </Container>
     )

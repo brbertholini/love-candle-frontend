@@ -3,24 +3,30 @@ import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { ProductCatalog } from "../../components/ProductCatalog"
 import AromaticasTittle from "../../assets/images/VelasAromaticas.svg"
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 
 
 export function Catalog() {
+    const [productsHtml, setProductsHtml] = useState([]);
 
-    let produtos = [
-        { id: 1, name: "Vela", price: 40, stars: 4, avaliacoes: 15},
-        { id: 2, name: "Vela 2", price: 35, stars: 3, avaliacoes: 100},
-        { id: 3, name: "Difusor", price: 25, stars: 5, avaliacoes: 5},
-        { id: 4, name: "Difusor", price: 25, stars: 5, avaliacoes: 5}
-    ];
-    let produtosHtml = []
+    async function getProducts() {
+        try {
+            const response = await axios.get('http://localhost:8080/products');
+            const products = response.data;
+            console.log(products);
+            const htmls = products.map(product => (
+                <ProductCatalog key={product.id} title={product.title} price={product.price} />
+            ));
+            setProductsHtml(htmls);
+        } catch (error) {
+            console.error('Erro ao buscar produtos:', error);
+        }
+    }
 
-    produtos.forEach((produto) => {
-        produtosHtml.push(<ProductCatalog key={produto.id} tittle={produto.name} 
-            avaliacoes={produto.avaliacoes} stars={produto.stars} price={produto.price}/>);
-    });
-        
-    
+    useEffect(() => {
+        getProducts();
+    }, []);
 
     return(
         <Container>
@@ -39,7 +45,7 @@ export function Catalog() {
                     
                 </CatalogFilter>
                 <CatalogContainer>
-                    {produtosHtml}
+                    {productsHtml}
                 </CatalogContainer>
             </Content>
             <Footer />
