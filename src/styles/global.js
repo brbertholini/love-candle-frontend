@@ -25,6 +25,7 @@ body, input, textarea {
     outline: none;
     }
 
+    
 
 a {
     text-decoration: none;
