@@ -1,21 +1,27 @@
-import { CartIcon, BoxIcon, Container, Navigation, LeafIcon, ClientsIcon, IconArea } from "./styles"
+import { CartIcon, BoxIcon, Container, Navigation, LeafIcon, ClientsIcon, IconArea } from "./styles.js"
 import LOVECANDLEcenter from '../../assets/images/LOVECANDLEcenter.svg';
+import React, { useState } from "react";
 
-export function Sidebar() {
+export function Sidebar({ activeIcon, setActiveIcon }) {
+
+    const handleIconClick = (icon) => {
+        setActiveIcon(icon);
+    };
+
     return(
         <Container>
-            <img src={LOVECANDLEcenter} alt="Logo" />
+            <img href="/" src={LOVECANDLEcenter} alt="Logo" />
             <Navigation>
-                <IconArea>
+                <IconArea onClick={() => handleIconClick('orders')}>
                 <CartIcon />
                 </IconArea>
-                <IconArea>
+                <IconArea onClick={() => handleIconClick('products')}>
                 <BoxIcon />
                 </IconArea>
-                <IconArea>
+                <IconArea onClick={() => handleIconClick('materials')}>
                 <LeafIcon />
                 </IconArea>
-                <IconArea>
+                <IconArea onClick={() => handleIconClick('clients')}>
                 <ClientsIcon />
                 </IconArea>
             </Navigation>

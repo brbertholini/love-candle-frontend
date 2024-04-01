@@ -7,6 +7,7 @@ import { HiUsers } from "react-icons/hi2";
 export const Container = styled.div`
     width: 180px;
     height: 100vh;
+    position: fixed;
     display: flex;
     flex-direction: column;
 
@@ -22,13 +23,12 @@ export const Container = styled.div`
 
 export const Navigation = styled.div`
     margin-top: 80px;
-    gap: 35px;
+    gap: 58px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-bottom: 50px;
 `
 
 export const CartIcon = styled(FaShoppingCart)`
@@ -57,4 +57,8 @@ export const IconArea = styled.div`
         transition: all ease-in-out 200ms;
         cursor: pointer;
     }
+`
+
+export const Link = styled.a`
+    color:black;
 `
