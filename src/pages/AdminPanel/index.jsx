@@ -1,9 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Sidebar } from "../../components/Sidebar"
+import { api } from "../../services/api.js";
 import { Clients, Container, Content, Materials, Orders, Products } from "./styles.js"
 
 export function AdminPanel() {
     const [activeIcon, setActiveIcon] = useState('');
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        api.get('/products')
+        .then(response => {
+            setProducts(response.data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }, []);
 
     return (
         <Container>
@@ -21,6 +34,11 @@ export function AdminPanel() {
                         <h1>PRODUTOS</h1>
                         <p>Todos os produtos disponíveis na sua loja estarão presentes nessa lista.
                             Você pode editá-los, excluí-los ou criar novos produtos.</p>
+                        <ul>
+                            {products.map(product => (
+                                <li key={product.id}>{product.name}</li>
+                            ))}
+                        </ul>
                     </Products>
                 )}
                 {activeIcon === 'materials' && (
