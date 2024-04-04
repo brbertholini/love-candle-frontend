@@ -7,10 +7,11 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-    width: 80%;
     margin-top: 65px;
-    margin-left: 260px;
-    
+    width: calc(100% - 180px);
+    padding-left: 260px;
+    padding-right: 80px;
+    flex-grow: 1;
 `
 
 export const Orders = styled.div`
@@ -64,14 +65,6 @@ export const Clients = styled.div`
         margin-bottom: 50px;
     }
 `
-export const Line = styled.div`
-    width: 100%;
-    height: 1px;
-    text-align: center;
-    background-color: #A9A9A9;
-    margin-top: 20px;
-    margin-bottom: 20px;
-`
 
 export const Table = styled.table`
     border-collapse: collapse;
@@ -80,12 +73,13 @@ export const Table = styled.table`
 
 export const StyledTh = styled.th`
     padding-bottom: 3px;
+    font-weight: 900;
 `
 
 export const StyledTd = styled.td`
  border-top: 1px solid black; 
  border-bottom: 1px solid black;
- padding-top: 0.5rem;
- padding-bottom: 0.5rem;
+ padding-top: 0.65rem;
+ padding-bottom: 0.65rem;
  text-align: left;
 `;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Sidebar } from "../../components/Sidebar"
 import { api } from "../../services/api.js";
-import { Clients, Container, Content, Line, Materials, Orders, Products, StyledTd, StyledTh, Table } from "./styles.js"
+import { Clients, Container, Content, Materials, Orders, Products, StyledTd, StyledTh, Table } from "./styles.js"
 
 export function AdminPanel() {
     const [activeIcon, setActiveIcon] = useState('');
@@ -41,7 +41,7 @@ export function AdminPanel() {
                                     <StyledTh style={{ textAlign: 'left' }}>CATEGORIA</StyledTh>
                                     <StyledTh style={{ textAlign: 'left' }}>TÍTULO</StyledTh>
                                     <StyledTh style={{ textAlign: 'left' }}>FRAGRÂNCIA</StyledTh>
-                                    <StyledTh style={{ textAlign: 'left' }}>g/ml</StyledTh>
+                                    <StyledTh style={{ textAlign: 'left' }}>PESO(g/ml)</StyledTh>
                                     <StyledTh style={{ textAlign: 'left' }}>QUANTIDADE</StyledTh>
                                     <StyledTh style={{ textAlign: 'left' }}>VALOR</StyledTh>
                                     <StyledTh style={{ textAlign: 'left' }}>DETALHES</StyledTh>
@@ -53,12 +53,10 @@ export function AdminPanel() {
                                         <StyledTd>{product.category}</StyledTd>
                                         <StyledTd>{product.title}</StyledTd>
                                         <StyledTd>{product.fragrance}</StyledTd>
-                                        <StyledTd>{}</StyledTd>
+                                        <StyledTd>{product.weight}</StyledTd>
                                         <StyledTd>{product.amount}</StyledTd>
                                         <StyledTd>{product.price}</StyledTd>
-                                        <StyledTd>{product.description}</StyledTd>
-
-
+                                        <StyledTd><a>Clique para ver</a></StyledTd>
                                     </tr>
                                 ))}
                             </tbody>
