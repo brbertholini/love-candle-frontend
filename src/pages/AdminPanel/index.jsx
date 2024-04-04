@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Sidebar } from "../../components/Sidebar"
 import { api } from "../../services/api.js";
-import { Clients, Container, Content, Materials, Orders, Products } from "./styles.js"
+import { Clients, Container, Content, Line, Materials, Orders, Products } from "./styles.js"
 
 export function AdminPanel() {
     const [activeIcon, setActiveIcon] = useState('');
@@ -35,11 +35,28 @@ export function AdminPanel() {
                         <h1>PRODUTOS</h1>
                         <p>Todos os produtos disponíveis na sua loja estarão presentes nessa lista.
                             Você pode editá-los, excluí-los ou criar novos produtos.</p>
-                        <ul>
-                            {products.map(product => (
-                                <li key={product.id}>{product.title}{product.category}{product.price}</li>
-                            ))}
-                        </ul>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CATEGORIA</th>
+                                    <th>TÍTULO</th>
+                                    <th>FRAGRÂNCIA</th>
+                                    <th>g/ml</th>
+                                    <th>QUANTIDADE</th>
+                                    <th>VALOR</th>
+                                    <th>DETALHES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {products.map(product => (
+                                    <tr key={product.id}>
+                                        <td>{product.title}</td>
+                                        <td>{product.category}</td>
+                                        <td>{product.price}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </Products>
                 )}
                 {activeIcon === 'materials' && (
