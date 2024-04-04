@@ -7,6 +7,7 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
+    width: 80%;
     margin-top: 65px;
     margin-left: 260px;
     
@@ -71,3 +72,20 @@ export const Line = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
 `
+
+export const Table = styled.table`
+    border-collapse: collapse;
+    width: 100%;
+`
+
+export const StyledTh = styled.th`
+    padding-bottom: 3px;
+`
+
+export const StyledTd = styled.td`
+ border-top: 1px solid black; 
+ border-bottom: 1px solid black;
+ padding-top: 0.5rem;
+ padding-bottom: 0.5rem;
+ text-align: left;
+`;

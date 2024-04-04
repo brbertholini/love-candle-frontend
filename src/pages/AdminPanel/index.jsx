@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Sidebar } from "../../components/Sidebar"
 import { api } from "../../services/api.js";
-import { Clients, Container, Content, Line, Materials, Orders, Products } from "./styles.js"
+import { Clients, Container, Content, Line, Materials, Orders, Products, StyledTd, StyledTh, Table } from "./styles.js"
 
 export function AdminPanel() {
     const [activeIcon, setActiveIcon] = useState('');
@@ -35,28 +35,34 @@ export function AdminPanel() {
                         <h1>PRODUTOS</h1>
                         <p>Todos os produtos disponíveis na sua loja estarão presentes nessa lista.
                             Você pode editá-los, excluí-los ou criar novos produtos.</p>
-                        <table>
+                        <Table>
                             <thead>
                                 <tr>
-                                    <th>CATEGORIA</th>
-                                    <th>TÍTULO</th>
-                                    <th>FRAGRÂNCIA</th>
-                                    <th>g/ml</th>
-                                    <th>QUANTIDADE</th>
-                                    <th>VALOR</th>
-                                    <th>DETALHES</th>
+                                    <StyledTh style={{ textAlign: 'left' }}>CATEGORIA</StyledTh>
+                                    <StyledTh style={{ textAlign: 'left' }}>TÍTULO</StyledTh>
+                                    <StyledTh style={{ textAlign: 'left' }}>FRAGRÂNCIA</StyledTh>
+                                    <StyledTh style={{ textAlign: 'left' }}>g/ml</StyledTh>
+                                    <StyledTh style={{ textAlign: 'left' }}>QUANTIDADE</StyledTh>
+                                    <StyledTh style={{ textAlign: 'left' }}>VALOR</StyledTh>
+                                    <StyledTh style={{ textAlign: 'left' }}>DETALHES</StyledTh>
                                 </tr>
                             </thead>
                             <tbody>
                                 {products.map(product => (
                                     <tr key={product.id}>
-                                        <td>{product.title}</td>
-                                        <td>{product.category}</td>
-                                        <td>{product.price}</td>
+                                        <StyledTd>{product.category}</StyledTd>
+                                        <StyledTd>{product.title}</StyledTd>
+                                        <StyledTd>{product.fragrance}</StyledTd>
+                                        <StyledTd>{}</StyledTd>
+                                        <StyledTd>{product.amount}</StyledTd>
+                                        <StyledTd>{product.price}</StyledTd>
+                                        <StyledTd>{product.description}</StyledTd>
+
+
                                     </tr>
                                 ))}
                             </tbody>
-                        </table>
+                        </Table>
                     </Products>
                 )}
                 {activeIcon === 'materials' && (
