@@ -10,12 +10,13 @@ export function AdminPanel() {
 
     useEffect(() => {
         api.get('/products')
-        .then(response => {
-            setProducts(response.data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+            .then(response => {
+                console.log(response.data);
+                setProducts(response.data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }, []);
 
     return (
@@ -36,7 +37,7 @@ export function AdminPanel() {
                             Você pode editá-los, excluí-los ou criar novos produtos.</p>
                         <ul>
                             {products.map(product => (
-                                <li key={product.id}>{product.name}</li>
+                                <li key={product.id}>{product.title}{product.category}{product.price}</li>
                             ))}
                         </ul>
                     </Products>
