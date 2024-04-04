@@ -39,7 +39,6 @@ button, a {
 button:hover {
         background-color: #7D6252;
         transition: all ease-in-out 400ms;
-        transform: translateX(2px);
 }
 
 a:hover {

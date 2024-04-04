@@ -6,9 +6,10 @@ import { HiUsers } from "react-icons/hi2";
 
 export const Container = styled.div`
     width: 180px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     display: flex;
+    flex: 0 0 auto;
     flex-direction: column;
 
     -webkit-box-shadow: 2px 0px 15px 0px rgba(0,0,0,0.30);
