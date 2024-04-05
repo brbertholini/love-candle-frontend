@@ -1,12 +1,14 @@
 import { CartIcon, BoxIcon, Container, Navigation, LeafIcon, ClientsIcon, IconArea } from "./styles.js"
 import LOVECANDLEcenter from '../../assets/images/LOVECANDLEcenter.svg';
-import React, { useState } from "react";
+import PropTypes from 'prop-types';
 
 export function Sidebar({ activeIcon, setActiveIcon }) {
 
     const handleIconClick = (icon) => {
         setActiveIcon(icon);
     };
+
+    console.log(activeIcon);
 
     return(
         <Container>
@@ -28,3 +30,8 @@ export function Sidebar({ activeIcon, setActiveIcon }) {
         </Container>
     )
 }
+
+Sidebar.propTypes = {
+    activeIcon: PropTypes.string.isRequired,
+    setActiveIcon: PropTypes.func.isRequired
+};
