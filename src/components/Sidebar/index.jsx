@@ -1,5 +1,6 @@
 import { CartIcon, BoxIcon, Container, Navigation, LeafIcon, ClientsIcon, IconArea } from "./styles.js"
 import LOVECANDLEcenter from '../../assets/images/LOVECANDLEcenter.svg';
+import PropTypes from 'prop-types';
 
 export function Sidebar({ activeIcon, setActiveIcon }) {
 
@@ -29,3 +30,8 @@ export function Sidebar({ activeIcon, setActiveIcon }) {
         </Container>
     )
 }
+
+Sidebar.propTypes = {
+    activeIcon: PropTypes.string.isRequired,
+    setActiveIcon: PropTypes.func.isRequired
+};

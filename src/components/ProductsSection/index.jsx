@@ -10,6 +10,46 @@ Modal.setAppElement('#root');
 export function ProductsSection() {
     const [products, setProducts] = useState([]);
     const [newProductModalIsOpen, setNewProductModalIsOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        title: "",
+        category: "",
+        fragrance: "",
+        quantity: "",
+        weight: "",
+        price: "",
+        description: ""
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        api.post('/products', formData)
+            .then(response => {
+                console.log('Produto registrado com sucesso:', response.data);
+
+                setFormData({
+                    title: "",
+                    category: "",
+                    fragrance: "",
+                    amount: "",
+                    weight: "",
+                    price: "",
+                    description: ""
+                });
+                setNewProductModalIsOpen(false);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle error, maybe show an error message to the user
+            });
+    };
 
     useEffect(() => {
         api.get('/products')
@@ -46,7 +86,7 @@ export function ProductsSection() {
                         justifyContent: 'center',
                         alignItems: 'center',
                         borderRadius: '2px',
-                        height: '80%',
+                        height: '65%',
                         padding: '40px',
                         backgroundColor: '#FFF4EE',
                         width: '65vw',
@@ -60,38 +100,66 @@ export function ProductsSection() {
                         <Row>
                             <div>
                                 <h2>Título</h2>
-                                <ProductInput placeholder="Título do produto" />
+                                <ProductInput
+                                    name="title"
+                                    value={formData.title}
+                                    onChange={handleInputChange}
+                                    placeholder="Título do produto" />
                             </div>
                             <div>
                                 <h2>Categoria</h2>
-                                <ProductInput placeholder="Categoria do produto" />
+                                <ProductInput 
+                                    name="category"
+                                    value={formData.category}
+                                    onChange={handleInputChange}
+                                    placeholder="Categoria do produto" />
                             </div>
                             <div>
                                 <h2>Fragrância</h2>
-                                <ProductInput placeholder="Fragrância do produto" />
+                                <ProductInput 
+                                    name="fragrance"
+                                    value={formData.fragrance}
+                                    onChange={handleInputChange}
+                                    placeholder="Fragrância do produto" />
                             </div>
                         </Row>
                         <Row>
                             <div>
                                 <h2>Quantidade</h2>
-                                <ProductInput placeholder="Quantidade em estoque" />
+                                <ProductInput 
+                                    name="amount"
+                                    value={formData.amount}
+                                    onChange={handleInputChange}
+                                    placeholder="Quantidade em estoque" />
                             </div>
                             <div>
                                 <h2>Peso</h2>
-                                <ProductInput placeholder="Peso em g ou ml" />
+                                <ProductInput 
+                                    name="weight"
+                                    value={formData.weight}
+                                    onChange={handleInputChange} 
+                                    placeholder="Peso em g ou ml" />
                             </div>
                             <div>
                                 <h2>Valor</h2>
-                                <ProductInput placeholder="Valor do produto" />
+                                <ProductInput 
+                                    name="price"
+                                    value={formData.price}
+                                    onChange={handleInputChange} 
+                                    placeholder="Valor do produto" />
                             </div>
                         </Row>
                         <Row>
                             <DescriptionColumn>
                                 <h2>Descrição</h2>
-                                <TextArea placeholder="Descrição do produto"></TextArea>
+                                <TextArea 
+                                    name="description"
+                                    value={formData.description}
+                                    onChange={handleInputChange} 
+                                    placeholder="Descrição do produto"></TextArea>
                             </DescriptionColumn>
                         </Row>
-                        <NewProduct style={{ marginLeft: '2vw' }} type="submit">REGISTRAR PRODUTO</NewProduct>
+                        <NewProduct style={{ marginLeft: '2vw' }} onClick={handleSubmit} type="submit">REGISTRAR PRODUTO</NewProduct>
                     </Form>
                 </ModalContent>
             </Modal>
@@ -117,7 +185,7 @@ export function ProductsSection() {
                             <StyledTd>{product.fragrance}</StyledTd>
                             <StyledTd>{product.weight}</StyledTd>
                             <StyledTd>{product.amount}</StyledTd>
-                            <StyledTd>{product.price}</StyledTd>
+                            <StyledTd>R$ {product.price}</StyledTd>
                             <StyledTd>Clique para ver</StyledTd>
                             <StyledTd>Editar</StyledTd>
                         </tr>
