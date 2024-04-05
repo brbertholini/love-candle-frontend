@@ -206,21 +206,25 @@ export const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    > h1 {
+            font-size: 22px;
+        }
 `
 
 export const Form = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
-    
 `
 
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
+    gap: 10px;
     justify-content: space-between;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     padding-bottom: 30px;
 
     > div {
@@ -229,6 +233,7 @@ export const Row = styled.div`
 
         > h2 {
             margin-bottom: 10px;
+            font-size: 18px;
         }
     }
 `
@@ -301,12 +306,4 @@ export const TextArea = styled.textarea`
 
 export const DescriptionColumn = styled.div`
     width: 100%;
-`
-
-export const Button = styled.button`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: none;
-    background-color: transparent;
 `

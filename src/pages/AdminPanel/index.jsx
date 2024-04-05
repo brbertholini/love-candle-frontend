@@ -7,6 +7,8 @@ import { GoPlus } from "react-icons/go";
 
 import { ButtonArea, Clients, Container, Content, DescriptionColumn, Filter, FilterArea, Form, Input, Materials, ModalContent, NewProduct, Orders, ProductInput, Products, Row, SearchIcon, StyledTd, StyledTh, Table, TextArea } from "./styles.js"
 
+Modal.setAppElement('#root');
+
 export function AdminPanel() {
     const [activeIcon, setActiveIcon] = useState('');
     const [products, setProducts] = useState([]);
@@ -60,7 +62,7 @@ export function AdminPanel() {
                                     flexDirection: 'column',
                                     justifyContent: 'center',
                                     alignItems: 'center',
-                                    borderRadius: '10px',
+                                    borderRadius: '2px',
                                     height: '80%',
                                     padding: '40px',
                                     backgroundColor: '#FFF4EE',
@@ -103,7 +105,7 @@ export function AdminPanel() {
                                     <Row>
                                         <DescriptionColumn>
                                             <h2>Descrição</h2>
-                                            <TextArea></TextArea>
+                                            <TextArea placeholder="Descrição do produto"></TextArea>
                                         </DescriptionColumn>
                                     </Row>
                                     <NewProduct style={{ marginLeft: '5vw' }} type="submit">REGISTRAR PRODUTO</NewProduct>
