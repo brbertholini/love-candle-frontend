@@ -91,7 +91,7 @@ export function ProductsSection() {
                                 <TextArea placeholder="Descrição do produto"></TextArea>
                             </DescriptionColumn>
                         </Row>
-                        <NewProduct style={{ marginLeft: '5vw' }} type="submit">REGISTRAR PRODUTO</NewProduct>
+                        <NewProduct style={{ marginLeft: '2vw' }} type="submit">REGISTRAR PRODUTO</NewProduct>
                     </Form>
                 </ModalContent>
             </Modal>
