@@ -39,11 +39,32 @@ export const Input = styled.input`
     height: 2.2rem;
     width: fit-content;
     padding: 10px;
-    border: 0.5px solid black;
+    border: none;
     background-color: #FFF4EE;
-    -webkit-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
-    -moz-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
-    box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+
+    transition: background-color 300ms, color 300ms, border 300ms, transform 300ms;
+
+    &:hover {
+        background-color: transparent;
+        color: black;
+        transition: all 300ms;
+        -webkit-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        -moz-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+    }
+
+    &:focus {
+        background-color: transparent;
+        color: black;
+        transition: all 300ms;
+        -webkit-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        -moz-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);  
+    }
+
+    &:not(:focus) {
+    transition: border-color 0.3s ease, box-shadow 400ms ease;
+}
 `
 
 export const Filter = styled.button`
@@ -67,7 +88,7 @@ export const Filter = styled.button`
         color: black;
         border: 1px solid black;
         transform: scale(1.03);
-        transition: all 600ms;
+        transition: all 800ms;
     }
 `
 
@@ -179,3 +200,113 @@ export const StyledTd = styled.td`
  padding-bottom: 0.65rem;
  text-align: left;
 `;
+
+export const ModalContent = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+export const Form = styled.form`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+`
+
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 30px;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+
+        > h2 {
+            margin-bottom: 10px;
+        }
+    }
+`
+
+export const ProductInput = styled.input`
+    font-size: 16px;
+    height: 2.2rem;
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+
+    transition: background-color 300ms, color 300ms, border 300ms, transform 300ms;
+
+    &:hover {
+        background-color: transparent;
+        color: black;
+        transition: all 300ms;
+        -webkit-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        -moz-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+    }
+
+    &:focus {
+        background-color: transparent;
+        color: black;
+        transition: all 300ms;
+        -webkit-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        -moz-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);  
+    }
+
+    &:not(:focus) {
+    transition: border-color 0.3s ease, box-shadow 400ms ease;
+}
+`
+
+export const TextArea = styled.textarea`
+    font-size: 16px;
+    height: 8rem;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFF4EE;
+    border: 1px solid black;
+
+    transition: background-color 300ms, color 300ms, border 300ms, transform 300ms;
+
+    &:hover {
+        background-color: transparent;
+        color: black;
+        transition: all 300ms;
+        -webkit-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        -moz-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+    }
+
+    &:focus {
+        background-color: transparent;
+        color: black;
+        transition: all 300ms;
+        -webkit-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        -moz-box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);
+        box-shadow: -4px 0px 15px 0px rgba(0,0,0,0.30);  
+    }
+
+    &:not(:focus) {
+    transition: border-color 0.3s ease, box-shadow 400ms ease;
+}
+`
+
+export const DescriptionColumn = styled.div`
+    width: 100%;
+`
+
+export const Button = styled.button`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+`
