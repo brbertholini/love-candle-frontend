@@ -1,12 +1,13 @@
 import { CartIcon, BoxIcon, Container, Navigation, LeafIcon, ClientsIcon, IconArea } from "./styles.js"
 import LOVECANDLEcenter from '../../assets/images/LOVECANDLEcenter.svg';
-import React, { useState } from "react";
 
 export function Sidebar({ activeIcon, setActiveIcon }) {
 
     const handleIconClick = (icon) => {
         setActiveIcon(icon);
     };
+
+    console.log(activeIcon);
 
     return(
         <Container>
