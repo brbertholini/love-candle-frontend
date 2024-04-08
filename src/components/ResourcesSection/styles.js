@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { HiMagnifyingGlass } from "react-icons/hi2";
 
 export const Container = styled.div`
     width: 100%;
@@ -60,4 +59,15 @@ export const NewResource = styled.button`
     transition: all 600ms;
     background-color: #17A500;
     }
+`
+
+export const ModalContent = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > h1 {
+            font-size: 22px;
+        }
 `
