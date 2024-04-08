@@ -2,8 +2,9 @@ import { useState } from "react"
 import Modal from 'react-modal';
 import { Sidebar } from "../../components/Sidebar"
 
-import { Clients, Container, Content, Materials, Orders } from "./styles.js"
+import { Clients, Container, Content, Orders } from "./styles.js"
 import { ProductsSection } from "../../components/ProductsSection/index.jsx";
+import { ResourcesSection } from "../../components/ResourcesSection/index.jsx";
 
 Modal.setAppElement('#root');
 
@@ -26,12 +27,7 @@ export function AdminPanel() {
                     <ProductsSection />
                 )}
                 {activeIcon === 'materials' && (
-                    <Materials>
-                        <h1>RECURSOS</h1>
-                        <p className="description">Todos os materiais de produção disponíveis no seu estoque
-                            estarão presentes nessa lista. Você pode editá-los, excluí-los ou criar novos.</p>
-                        <p className="quantity" style={{ color: '#6D6D6D' }}>{ } recursos encontrados</p>
-                    </Materials>
+                    <ResourcesSection />
                 )}
                 {activeIcon === 'clients' && (
                     <Clients>

@@ -47,7 +47,6 @@ export function ProductsSection() {
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Handle error, maybe show an error message to the user
             });
     };
 
