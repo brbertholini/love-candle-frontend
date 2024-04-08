@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Modal from 'react-modal';
 import { api } from "../../services/api.js";
-import { ButtonArea, FilterArea, NewProduct, SearchIcon, Filter, Input, ModalContent, Form, Row, ProductInput, TextArea, Table, StyledTh, StyledTd, DescriptionColumn, Container } from "./styles.js";
+import { ButtonArea, FilterArea, NewProduct, SearchIcon, Filter, Input, ModalContent, Form, Row, ProductInput, TextArea, Table, StyledTh, StyledTd, DescriptionColumn, Container, Update } from "./styles.js";
 import { GoPlus } from "react-icons/go";
 import { LuListFilter } from "react-icons/lu";
+import { RxUpdate } from "react-icons/rx";
+
 
 Modal.setAppElement('#root');
 
@@ -19,6 +21,8 @@ export function ProductsSection() {
         price: "",
         description: ""
     });
+
+    const [, setLoading] = useState(false);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -50,14 +54,22 @@ export function ProductsSection() {
             });
     };
 
-    useEffect(() => {
+    const fetchProducts = () => {
+        console.log("Carregando");
+        setLoading(true);
         api.get('/products')
             .then(response => {
                 setProducts(response.data);
+                setLoading(false);
             })
             .catch(error => {
                 console.error('Error:', error);
+                setLoading(false);
             });
+    };
+
+    useEffect(() => {
+        fetchProducts();
     }, []);
 
     return (
@@ -70,6 +82,7 @@ export function ProductsSection() {
                     <SearchIcon /><Input placeholder="Buscar produto" />
                     <Filter><LuListFilter />Filtros</Filter>
                 </FilterArea>
+                <Update onClick={fetchProducts} ><RxUpdate /></Update>
                 <NewProduct onClick={() => setNewProductModalIsOpen(true)}><GoPlus style={{ marginRight: '10px' }} />Adicionar novo produto</NewProduct>
             </ButtonArea>
             <Modal

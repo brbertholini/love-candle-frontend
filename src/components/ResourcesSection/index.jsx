@@ -2,9 +2,10 @@ import { Container, ModalContent, NewResource, StyledTd, StyledTh, Table } from 
 import { api } from "../../services/api.js";
 import Modal from 'react-modal';
 import { useState, useEffect } from "react";
-import { ButtonArea, Filter, FilterArea, Form, Input, Row, SearchIcon } from "../ProductsSection/styles.js";
+import { ButtonArea, Filter, FilterArea, Form, Input, Row, SearchIcon, Update } from "../ProductsSection/styles.js";
 import { LuListFilter } from "react-icons/lu";
 import { GoPlus } from "react-icons/go";
+import { RxUpdate } from "react-icons/rx";
 
 export function ResourcesSection() {
     const [resources, setResources] = useState([]);
@@ -18,14 +19,24 @@ export function ResourcesSection() {
         quantityInStock: ""
     });
 
-    useEffect(() => {
+    const [, setLoading] = useState(false);
+
+    const fetchResources = () => {
+        console.log("Carregando");
+        setLoading(true);
         api.get('/resources')
             .then(response => {
                 setResources(response.data);
+                setLoading(false);
             })
             .catch(error => {
                 console.error('Error:', error);
+                setLoading(false);
             });
+    };
+
+    useEffect(() => {
+        fetchResources();
     }, []);
 
     const handleInputChange = (e) => {
@@ -68,6 +79,7 @@ export function ResourcesSection() {
                     <SearchIcon /><Input placeholder="Buscar produto" />
                     <Filter><LuListFilter />Filtros</Filter>
                 </FilterArea>
+                <Update onClick={fetchResources} ><RxUpdate /></Update>
                 <NewResource onClick={() => setNewResourceModalIsOpen(true)}><GoPlus style={{ marginRight: '10px' }} />Adicionar novo recurso</NewResource>
             </ButtonArea>
             <Modal
