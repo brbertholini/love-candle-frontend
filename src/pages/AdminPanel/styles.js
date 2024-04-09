@@ -31,23 +31,6 @@ export const Orders = styled.div`
     }
 `
 
-export const Materials = styled.div`
-    > h1 {
-        font-family: 'DM Serif Display', serif;
-        font-size: 32px;
-        margin-bottom: 8px;
-    }
-
-    > .description {
-        width: 53%;
-        padding-bottom: 50px;
-    }
-
-    > .quantity {
-        padding-bottom: 8px;
-    }
-`
-
 export const Clients = styled.div`
     > h1 {
         font-family: 'DM Serif Display', serif;

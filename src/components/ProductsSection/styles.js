@@ -21,6 +21,32 @@ export const Container = styled.div`
     }
 `
 
+export const Update = styled.button`
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 2.2rem;
+    width: 2.6rem;
+    padding: 1px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    
+    transition: background-color 600ms, color 600ms, border 1000ms, transform 600ms;
+
+    &:hover {
+        background-color: black;
+        color: #FFF4EE;
+        transform: scale(1.03);
+        border: 1px solid black;
+        transition: all 200ms;
+    }
+`
+
 export const Table = styled.table`
     border-collapse: collapse;
     width: 100%;
