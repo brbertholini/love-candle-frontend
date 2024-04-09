@@ -1,4 +1,4 @@
-import { Container, ModalContent, NewResource, StyledTd, StyledTh, Table } from "./styles.js";
+import { Cancel, CancelIcon, Container, DeleteResource, ModalContent, NewResource, Row2, StyledTd, StyledTh, Table, XButton } from "./styles.js";
 import { api } from "../../services/api.js";
 import Modal from 'react-modal';
 import { useState, useEffect } from "react";
@@ -6,10 +6,15 @@ import { ButtonArea, Filter, FilterArea, Form, Input, Row, SearchIcon, Update } 
 import { LuListFilter } from "react-icons/lu";
 import { GoPlus } from "react-icons/go";
 import { RxUpdate } from "react-icons/rx";
+import { FaEdit } from "react-icons/fa";
+
+
 
 export function ResourcesSection() {
     const [resources, setResources] = useState([]);
     const [newResourceModalIsOpen, setNewResourceModalIsOpen] = useState(false);
+    const [newEditResourceModalIsOpen, setEditResourceModalIsOpen] = useState(false);
+    const [selectedResource, setSelectedResource] = useState(null);
     const [formData, setFormData] = useState({
         title: "",
         category: "",
@@ -47,7 +52,7 @@ export function ResourcesSection() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSaveSubmit = (e) => {
         e.preventDefault();
         api.post('/resources', formData)
             .then(response => {
@@ -67,6 +72,19 @@ export function ResourcesSection() {
                 console.error('Error:', error);
             });
     };
+
+    const handleEditSubmit = (e) => {
+        e.preventDefault();
+        api.put(`/resources/${selectedResource.id}`, formData)
+           .then(response => {
+             console.log('Recurso atualizado com sucesso:', response.data);
+             setEditResourceModalIsOpen(false);
+             fetchResources(); // update
+           })
+           .catch(error => {
+             console.error('Error:', error);
+           });
+       };
 
     return (
         <Container>
@@ -95,16 +113,17 @@ export function ResourcesSection() {
                         justifyContent: 'center',
                         alignItems: 'center',
                         borderRadius: '2px',
-                        height: '65%',
+                        height: '480px',
+                        width: '860px',
                         padding: '30px',
                         backgroundColor: '#FFF4EE',
-                        width: '60vw',
                         margin: 'auto',
                     }
                 }}
             >
                 <ModalContent>
-                    <h1 style={{ marginBottom: '25px' }}>REGISTRAR RECURSO</h1>
+                <XButton onClick={() => setNewResourceModalIsOpen(false)} ><CancelIcon style={{ marginLeft: 'auto' }} /></XButton>
+                    <h1 style={{ marginBottom: '25px', fontWeight:'800' }}>REGISTRAR RECURSO</h1>
                     <Form>
                         <Row>
                             <div>
@@ -113,7 +132,7 @@ export function ResourcesSection() {
                                     name="title"
                                     value={formData.title}
                                     onChange={handleInputChange}
-                                    placeholder="Título do produto" />
+                                    placeholder="Título do recurso" />
                             </div>
                             <div>
                                 <h2>Categoria</h2>
@@ -158,7 +177,10 @@ export function ResourcesSection() {
                                     placeholder="Quantidade em g ou ml" />
                             </div>
                         </Row>
-                        <NewResource style={{ marginLeft: '2vw' }} onClick={handleSubmit} type="submit">REGISTRAR PRODUTO</NewResource>
+                        <Row2>
+                        <Cancel onClick={() => setNewResourceModalIsOpen(false)}>Cancelar</Cancel>
+                        <NewResource onClick={handleSaveSubmit} type="submit">Registrar produto</NewResource>
+                        </Row2>
                     </Form>
                 </ModalContent>
             </Modal>
@@ -184,11 +206,101 @@ export function ResourcesSection() {
                             <StyledTd>{resource.amount}</StyledTd>
                             <StyledTd>{resource.quantityInStock}</StyledTd>
                             <StyledTd>R$ {resource.price}</StyledTd>
-                            <StyledTd>Editar</StyledTd>
+                            <StyledTd><FaEdit
+                                onClick={() => {
+                                    setSelectedResource(resource);
+                                    setEditResourceModalIsOpen(true);
+                                }} style={{ fontSize: '20px', marginLeft: '18px' }} /></StyledTd>
+
                         </tr>
+
                     ))}
                 </tbody>
             </Table>
+            <Modal
+                isOpen={newEditResourceModalIsOpen}
+                onRequestClose={() => setEditResourceModalIsOpen(false)}
+                style={{
+                    overlay: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.75)'
+                    },
+                    content: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: '2px',
+                        height: '480px',
+                        width: '860px',
+                        padding: '30px',
+                        backgroundColor: '#FFF4EE',
+                        margin: 'auto',
+                    }
+                }}
+            >
+                <ModalContent>
+                    <XButton onClick={() => setEditResourceModalIsOpen(false)} ><CancelIcon style={{ marginLeft: 'auto' }} /></XButton>
+                    <h1 style={{ marginBottom: '25px', fontWeight:'800' }}>EDITAR RECURSO</h1>
+                    <Form>
+                        <Row>
+                            <div>
+                                <h2>Título</h2>
+                                <Input
+                                    name="title"
+                                    value={formData.title}
+                                    onChange={handleInputChange}
+                                    placeholder="Título do recurso" />
+                            </div>
+                            <div>
+                                <h2>Categoria</h2>
+                                <Input
+                                    name="category"
+                                    value={formData.category}
+                                    onChange={handleInputChange}
+                                    placeholder="Categoria do produto" />
+                            </div>
+                            <div>
+                                <h2>Fragrância</h2>
+                                <Input
+                                    name="fragrance"
+                                    value={formData.fragrance}
+                                    onChange={handleInputChange}
+                                    placeholder="Fragrância do produto" />
+                            </div>
+                        </Row>
+                        <Row>
+                            <div>
+                                <h2>Quantidade</h2>
+                                <Input
+                                    name="amount"
+                                    value={formData.amount}
+                                    onChange={handleInputChange}
+                                    placeholder="Quantidade em estoque" />
+                            </div>
+                            <div>
+                                <h2>Valor</h2>
+                                <Input
+                                    name="price"
+                                    value={formData.price}
+                                    onChange={handleInputChange}
+                                    placeholder="Valor do produto" />
+                            </div>
+                            <div>
+                                <h2>Quantidade (g ou ml)</h2>
+                                <Input
+                                    name="quantityInStock"
+                                    value={formData.quantityInStock}
+                                    onChange={handleInputChange}
+                                    placeholder="Quantidade em g ou ml" />
+                            </div>
+                        </Row>
+                        <Row2>
+                        <DeleteResource>Excluir recurso</DeleteResource>
+                        <NewResource onClick={handleEditSubmit} type="submit">Atualizar recurso</NewResource>
+                        </Row2>
+                    </Form>
+                </ModalContent>
+            </Modal>
         </Container>
     )
 }

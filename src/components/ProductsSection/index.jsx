@@ -5,6 +5,7 @@ import { ButtonArea, FilterArea, NewProduct, SearchIcon, Filter, Input, ModalCon
 import { GoPlus } from "react-icons/go";
 import { LuListFilter } from "react-icons/lu";
 import { RxUpdate } from "react-icons/rx";
+import { CancelIcon, XButton } from "../ResourcesSection/styles.js";
 
 
 Modal.setAppElement('#root');
@@ -98,15 +99,16 @@ export function ProductsSection() {
                         justifyContent: 'center',
                         alignItems: 'center',
                         borderRadius: '2px',
-                        height: '65%',
+                        height: '580px',
+                        width: '860px',
                         padding: '40px',
                         backgroundColor: '#FFF4EE',
-                        width: '65vw',
                         margin: 'auto',
                     }
                 }}
             >
                 <ModalContent>
+                    <XButton onClick={() => setNewProductModalIsOpen(false)} ><CancelIcon style={{ marginLeft: 'auto' }} /></XButton>
                     <h1 style={{ marginBottom: '25px' }}>REGISTRAR PRODUTO</h1>
                     <Form>
                         <Row>
