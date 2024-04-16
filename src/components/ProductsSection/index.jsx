@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Modal from 'react-modal';
 import { api } from "../../services/api.js";
-import { ButtonArea, FilterArea, NewProduct, SearchIcon, Filter, Input, ModalContent, Form, Row, ProductInput, TextArea, Table, StyledTh, StyledTd, DescriptionColumn, Container, Update } from "./styles.js";
+import { ButtonArea, FilterArea, NewProduct, SearchIcon, Filter, Input, ModalContent, Form, Row, ProductInput, TextArea, Table, StyledTh, StyledTd, DescriptionColumn, Container, Update, CalcProduct, Column } from "./styles.js";
 import { GoPlus } from "react-icons/go";
+import { FaCalculator } from "react-icons/fa6";
 import { LuListFilter } from "react-icons/lu";
 import { RxUpdate } from "react-icons/rx";
 import { CancelIcon, XButton } from "../ResourcesSection/styles.js";
@@ -84,7 +85,10 @@ export function ProductsSection() {
                     <Filter><LuListFilter />Filtros</Filter>
                 </FilterArea>
                 <Update onClick={fetchProducts} ><RxUpdate /></Update>
-                <NewProduct onClick={() => setNewProductModalIsOpen(true)}><GoPlus style={{ marginRight: '10px' }} />Adicionar novo produto</NewProduct>
+                <Column>
+                <CalcProduct onClick={() => setCalcProdModalIsOpen(true)}><FaCalculator style={{ marginRight: '10px' }}/>Calcular valor de produto</CalcProduct>
+                <NewProduct onClick={() => setNewProductModalIsOpen(true)}><GoPlus style={{ marginRight: '10px' }} />Adicionar um novo produto</NewProduct>
+                </Column>
             </ButtonArea>
             <Modal
                 isOpen={newProductModalIsOpen}

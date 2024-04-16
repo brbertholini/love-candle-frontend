@@ -23,11 +23,11 @@ export const Container = styled.div`
 
 export const Update = styled.button`
     display: flex;
-    margin-left: auto;
-    margin-right: 20px;
     flex-direction: row;
-    align-items: center;
+    margin-left: auto;
+    margin-right: 15px;
     justify-content: center;
+    align-items: center;
     font-size: 16px;
     height: 2.2rem;
     width: 2.6rem;
@@ -106,6 +106,7 @@ export const ButtonArea = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: end;
     justify-content: space-between;
     padding-bottom: 24px;
 `
@@ -113,7 +114,7 @@ export const ButtonArea = styled.div`
 export const FilterArea = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: end;
 `
 
 export const SearchIcon = styled(HiMagnifyingGlass)`
@@ -179,8 +180,39 @@ export const Filter = styled.button`
     }
 `
 
+export const CalcProduct = styled.button`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+font-size: 16px;
+gap: 6px;
+height: 2.2rem;
+width: fit-content;
+padding-left: 20px;
+padding-right: 20px;
+background-color: #292C34;
+border: none;
+margin-bottom: 5px;
+
+transition: background-color 600ms, color 600ms, border 600ms, transform 600ms;
+
+&:hover {
+transform: scale(1.03);
+transition: all 600ms;
+background-color: #292C34;
+opacity: 0.8;
+}
+`
+
+export const Column = styled.div`
+    display:flex;
+    flex-direction: column;
+`
+
 export const NewProduct = styled.button`
     display: flex;
+    width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
